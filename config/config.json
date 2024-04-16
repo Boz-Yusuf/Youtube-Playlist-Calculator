@@ -1,6 +1,6 @@
 {
     "apiKeys": {
-        "youtubeApiToken": "AIzaSyDr2-jPU-LquMZvBVN8Mazb7QJetqsRKbs",
+        "token1": "token_value",
         "token2": "another_token_value"
     }
 }
