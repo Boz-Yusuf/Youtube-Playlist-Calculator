@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css"  rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="nav-left">
+                    <img class="nav-image" src="/assets/youtube-100.png" alt="youtube icon">
+                    <div class="nav-title">
+                        <h1>Youtube</h1>
+                        <h1>Playlist Duration Calculator</h1>
+                    </div>
+                </div>
+
+                <div class="nav-left">
+                    <!-- <button>language</button> -->
+                    <button > <img  class="nav-button-image" src="/assets/icons/dark-mode-48.png" alt=""></button>
+                </div>
+            </nav>
+            <hr>
+        </header>
+        <div class="content">
+            <section class="content-result">
+                <h2 id="result">Total Playlist Duration: 12 hours, 10 minutes, 10 seconds</h2>
+                <h3 id="">Average Length of Video : 17 minutes, 48 seconds </h3>
+                <h3 id="">Total Videos in playlist : 16</h3>
+            </section>
+            <section class="content-form">
+                
+                <div id="myForm" class="form-container" action="/calculate" method="post">
+                    <h3>Enter playlist URL or playlist ID</h3>
+                    <input class="form-input" name="playlistURL" id="playlistURL"  type="text" placeholder="https://www.youtube.com/watch?v=jNQXAC9IVRw" required>
+                    <input class="form-sumbit" type="button"  name="" id="submitButton" value="CALCULATE" >
+                </div>
+            </section>
+            <section class="content-advert">
+                <h2>ADVERT</h2>
+            </section>
+            <section class="content-alternatives">
+                <div class="alternatives-result">
+                    <h3>x1.25</h3>    
+                    <div class="alternatives-result-diveder"></div>
+                    <p id="result_1_25"> </p>
+                </div>
+                <div class="alternatives-result">
+                    <h3>x1.5</h3>  
+                    <div class="alternatives-result-diveder"></div> 
+                    <p id="result_1_5"> </p>
+                </div>
+                <div class="alternatives-result">
+                    <h3>x1.75 </h3>   
+                    <div class="alternatives-result-diveder"></div>
+                    <p id="result_1_75"></p>
+                </div>
+                <div class="alternatives-result">
+                    <h3>x2</h3>   
+                    <div class="alternatives-result-diveder"></div>
+                    <p id="result_1_2"> </p>
+                </div>
+            </section>
+
+        </div>
+        <footer>
+            <p>Made by <a target="_blank" href="https://github.com/Boz-Yusuf"> <strong>Yusuf Boz</strong> </a> </p>
+        </footer>
+    </div>
+    <script src="/scripts/main.js"></script>
+</body>
+
+</html>
