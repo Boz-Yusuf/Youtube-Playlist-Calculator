@@ -1,78 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playlist Calculator</title>
+    <link type="text/css" rel="stylesheet" href="styles/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link type="text/css"  rel="stylesheet" href="/styles/main.css">
-</head>
+  <body class="font-tilt bg-pGray dark:text-pGray dark:bg-gray-600 space-y-12">
+    <div class="shadow-lg w-full">
+      <header class="container mx-auto">
+        <nav>
+          <div class="flex items-center">
+            <img class="" src="assets/youtube-100.png" alt="youtube icon" />
+            <div class="">
+              <h1>Youtube</h1>
+              <h1>Playlist Duration Calculator</h1>
+            </div>
+          </div>
 
-<body>
-    <div class="container">
-        <header>
-            <nav>
-                <div class="nav-left">
-                    <img class="nav-image" src="/assets/youtube-100.png" alt="youtube icon">
-                    <div class="nav-title">
-                        <h1>Youtube</h1>
-                        <h1>Playlist Duration Calculator</h1>
-                    </div>
-                </div>
-
-                <div class="nav-left">
-                    <!-- <button>language</button> -->
-                    <button > <img  class="nav-button-image" src="/assets/icons/dark-mode-48.png" alt=""></button>
-                </div>
-            </nav>
-            <hr>
-        </header>
-        <div class="content">
-            <section class="content-result">
-                <h2 id="result">Total Playlist Duration: 12 hours, 10 minutes, 10 seconds</h2>
-                <h3 id="">Average Length of Video : 17 minutes, 48 seconds </h3>
-                <h3 id="">Total Videos in playlist : 16</h3>
-            </section>
-            <section class="content-form">
-                
-                <div id="myForm" class="form-container" action="/calculate" method="post">
-                    <h3>Enter playlist URL or playlist ID</h3>
-                    <input class="form-input" name="playlistURL" id="playlistURL"  type="text" placeholder="https://www.youtube.com/watch?v=jNQXAC9IVRw" required>
-                    <input class="form-sumbit" type="button"  name="" id="submitButton" value="CALCULATE" >
-                </div>
-            </section>
-            <section class="content-advert">
-                <h2>ADVERT</h2>
-            </section>
-            <section class="content-alternatives">
-                <div class="alternatives-result">
-                    <h3>x1.25</h3>    
-                    <div class="alternatives-result-diveder"></div>
-                    <p id="result_1_25"> </p>
-                </div>
-                <div class="alternatives-result">
-                    <h3>x1.5</h3>  
-                    <div class="alternatives-result-diveder"></div> 
-                    <p id="result_1_5"> </p>
-                </div>
-                <div class="alternatives-result">
-                    <h3>x1.75 </h3>   
-                    <div class="alternatives-result-diveder"></div>
-                    <p id="result_1_75"></p>
-                </div>
-                <div class="alternatives-result">
-                    <h3>x2</h3>   
-                    <div class="alternatives-result-diveder"></div>
-                    <p id="result_1_2"> </p>
-                </div>
-            </section>
-
-        </div>
-        <footer>
-            <p>Made by <a target="_blank" href="https://github.com/Boz-Yusuf"> <strong>Yusuf Boz</strong> </a> </p>
-        </footer>
+          <div class="">
+            <!-- <button>language</button> -->
+            <button onclick="toogleDark()">
+              <img
+                class="nav-button-image"
+                src="assets/icons/dark-mode-48.png"
+                alt=""
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
     </div>
-    <script src="/scripts/main.js"></script>
-</body>
+    <div class="w-full h-auto">
+      <main class="container mx-auto">
+        <div class="space-y-12">
+          <!-- RESULT -->
+          <section
+            class="flex flex-col items-center gap-4 bg-pLightRed dark:bg-pDarkRed text-pGray p-4 rounded-lg shadow-lg text-xl"
+          >
+            <h2 id="">
+              Total Playlist Duration: 12 hours, 10 minutes, 10 seconds
+            </h2>
+            <h3 id="">Average Length of Video : 17 minutes, 48 seconds</h3>
+            <h3 id="">Total Videos in playlist : 16</h3>
+          </section>
+          <!-- URL CALCULATE -->
+          <section class="">
+            <form
+              id=""
+              class="flex flex-col w-full mx-auto items-center gap-4 bg-gray-200 dark:bg-gray-700 text-pDarkGray p-4 rounded-lg shadow-lg text-xl"
+              action="/calculate"
+              method="post"
+            >
+              <h3 class="h-12 text-3xl text-pLightRed">
+                Enter playlist URL or playlist ID
+              </h3>
+              <div class="w-full flex gap-4 px-2 p-4">
+                <input
+                  class="flex-1 pl-4 h-12 rounded-lg"
+                  name="playlistURL"
+                  id="playlistURL"
+                  type="text"
+                  placeholder="https://www.youtube.com/watch?v=jNQXAC9IVRw"
+                  required
+                />
+                <button
+                  class="bg-pBlue text-white px-4 rounded-lg hover:bg-pLightRed duration-150 ease-in-out pointer hover:shadow-lg"
+                  type="submit"
+                  name=""
+                  id=""
+                  value="CALCULATE"
+                >
+                  CALCULATE
+                </button>
+              </div>
+            </form>
+          </section>
+          <!-- Advent -->
+          <section
+            class="h-[100px] bg-gray-400 grid place-items-center text-white text-3xl rounded-lg shadow-lg"
+          >
+            <h2>ADVERT</h2>
+          </section>
+          <!-- ADVANCED -->
+          <section class="grid grid-cols-4 gap-12 tracking-wider">
+            <div
+              class="h-auto min-h-[120px] flex flex-col text-pGray rounded-lg overflow-hidden shadow-lg"
+            >
+              <h3
+                class="bg-pOrange dark:bg-pOrange/50 h-12 shadow-lg grid place-items-center text-white text-xl rounded-lg"
+              >
+                x1.25
+              </h3>
+              <div
+                class="grid bg-pLightRed dark:bg-pDarkRed grid-cols-4 flex-1 place-items-center text-xl"
+              >
+                <div>12</div>
+                <div>12</div>
+                <div>12</div>
+                <div>12</div>
+              </div>
+              <div class="bg-pBlue grid grid-cols-4 h-6 place-items-center">
+                <div>DAY</div>
+                <div>HOURS</div>
+                <div>MIN</div>
+                <div>SEC</div>
+              </div>
+            </div>
+            <div
+              class="h-auto min-h-[120px] flex flex-col text-pGray rounded-lg overflow-hidden shadow-lg"
+            >
+              <h3
+                class="bg-pOrange dark:bg-pOrange/50 h-12 shadow-lg grid place-items-center text-white text-xl rounded-lg"
+              >
+                x1.5
+              </h3>
+              <div
+                class="grid bg-pLightRed dark:bg-pDarkRed grid-cols-4 flex-1 place-items-center text-xl"
+              >
+                <div>12</div>
+                <div>12</div>
+                <div>12</div>
+                <div>12</div>
+              </div>
+              <div class="bg-pBlue grid grid-cols-4 h-6 place-items-center">
+                <div>DAY</div>
+                <div>HOURS</div>
+                <div>MIN</div>
+                <div>SEC</div>
+              </div>
+            </div>
+            <div
+              class="h-auto min-h-[120px] flex flex-col text-pGray rounded-lg overflow-hidden shadow-lg"
+            >
+              <h3
+                class="bg-pOrange dark:bg-pOrange/50 h-12 shadow-lg grid place-items-center text-white text-xl rounded-lg"
+              >
+                x1.75
+              </h3>
+              <div
+                class="grid bg-pLightRed dark:bg-pDarkRed grid-cols-4 flex-1 place-items-center text-xl"
+              >
+                <div>12</div>
+                <div>12</div>
+                <div>12</div>
+                <div>12</div>
+              </div>
+              <div class="bg-pBlue grid grid-cols-4 h-6 place-items-center">
+                <div>DAY</div>
+                <div>HOURS</div>
+                <div>MIN</div>
+                <div>SEC</div>
+              </div>
+            </div>
+            <div
+              class="h-auto min-h-[120px] flex flex-col text-pGray rounded-lg overflow-hidden shadow-lg"
+            >
+              <h3
+                class="bg-pOrange dark:bg-pOrange/50 h-12 shadow-lg grid place-items-center text-white text-xl rounded-lg"
+              >
+                x2
+              </h3>
+              <div
+                class="grid bg-pLightRed dark:bg-pDarkRed grid-cols-4 flex-1 place-items-center text-xl"
+              >
+                <div>12</div>
+                <div>12</div>
+                <div>12</div>
+                <div>12</div>
+              </div>
+              <div class="bg-pBlue grid grid-cols-4 h-6 place-items-center">
+                <div>DAY</div>
+                <div>HOURS</div>
+                <div>MIN</div>
+                <div>SEC</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div
+      class="bg-orange-300 dark:bg-orange-600 h-24 shadow-inner border-t-2 border-gray-300 text-bgGray dark:text-pWhite"
+    >
+      <footer class="container mx-auto h-full grid place-items-center">
+        <p>
+          Made by
+          <a target="_blank" href="https://github.com/Boz-Yusuf">
+            <strong class="text-red-700 dark:text-pOrange">Yusuf Boz</strong>
+          </a>
+        </p>
+      </footer>
+    </div>
 
+    <script src="/scripts/main.js"></script>
+    <script>
+      //determines if the user has a set theme
+      function detectColorScheme() {
+        var theme = "light"; //default to light
+
+        //local storage is used to override OS theme settings
+        if (localStorage.getItem("theme")) {
+          if (localStorage.getItem("theme") == "dark") {
+            var theme = "dark";
+          }
+        } else if (!window.matchMedia) {
+          //matchMedia method not supported
+          return false;
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          //OS theme setting detected as dark
+          var theme = "dark";
+        }
+
+        //dark theme preferred, set document with a `data-theme` attribute
+        if (theme == "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      }
+      detectColorScheme();
+    </script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              pBlue: "#4793AF",
+              pOrange: "#F9A826",
+              pGray: "#F2F2F2",
+              pDarkGray: "#333333",
+              pLightRed: "#DD5746",
+              pDarkRed: "#8B322C",
+            },
+            fontFamily: {
+              tilt: ["Tilt Neon", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      function toogleDark() {
+        if (localStorage.theme !== "dark") {
+          localStorage.setItem("theme", "dark");
+          document.documentElement.classList.add("dark");
+        } else {
+          localStorage.setItem("theme", "light");
+          document.documentElement.classList.remove("dark");
+        }
+      }
+
+      // Whenever the user explicitly chooses light mode
+      localStorage.theme = "light";
+
+      // Whenever the user explicitly chooses dark mode
+      localStorage.theme = "dark";
+
+      // Whenever the user explicitly chooses to respect the OS preference
+      localStorage.removeItem("theme");
+    </script>
+  </body>
 </html>
